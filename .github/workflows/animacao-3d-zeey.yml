@@ -23,11 +23,11 @@ jobs:
             blender -b --threads 2 --python animacao/codigo3d/cena.py -- "$n"
           done
       - name: Montar voz, legenda e MP4
-        run: python animacao/codigo3d/finalizar.py
+        run: python animacao/codigo3d/filmes_v2.py
       - name: Disponibilizar os videos
         uses: actions/upload-artifact@v4
         with:
-          name: zeey-tres-videos-3d
-          path: animacao/saida/Zeey_0[1-3].mp4
+          name: zeey-tres-historias-v2
+          path: animacao/codigo3d/v2/*.mp4
           if-no-files-found: error
           retention-days: 7
