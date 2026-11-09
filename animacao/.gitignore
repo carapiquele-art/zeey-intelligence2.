@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.partial.mp4
+hf_token
+.env
+.env.*

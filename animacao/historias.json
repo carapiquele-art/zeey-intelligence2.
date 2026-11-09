@@ -1,0 +1,32 @@
+[
+  {
+    "name": "01_oficina",
+    "voice": "A mensagem chegou, mas a oficina não para. E se o pedido fosse registrado enquanto você trabalha? O Z mostra o caminho. Você recebe o contexto e continua a conversa. Zeey. Sua empresa, seu jeito.",
+    "prompts": [
+      "A mechanic works under a car, the phone buzzes and lights up, he stops and looks worried, the little blue Z mascot blinks and reacts. 3D animated movie, fluid movements, preserve character design.",
+      "The mechanic picks up the phone and looks worried, customers wait behind him. The little blue Z floats closer and points at the screen, natural expressive animation, no text.",
+      "The little blue Z transforms into a glowing blue ribbon connecting the phone to a simple computer screen, the mechanic watches with surprise, cinematic 3D animation.",
+      "The mechanic smiles with relief and reads his phone, the little blue Z mascot waves and spins playfully, workshop lights glow, end on a confident warm composition."
+    ]
+  },
+  {
+    "name": "02_confeitaria",
+    "voice": "Joana prepara os bolos. Uma cliente quer fazer uma encomenda. E se ela encontrasse as opções no site? O pedido chega organizado, e Joana confirma a disponibilidade. Zeey. Uma solução para a sua rotina.",
+    "prompts": [
+      "The baker carefully decorates a cake, her phone buzzes with an incoming request, she looks up surprised, Z blinks. Charming 3D character animation, no text.",
+      "The busy baker glances from a cake to her phone and looks concerned. The small blue Z floats into view and waves to her, natural movement and expressive faces.",
+      "The blue Z transforms into a glowing blue ribbon, creating a simple floating website interface with cake images and clear shapes, the baker follows with her eyes. No words or text.",
+      "The baker checks the phone, nods and smiles as the little blue Z makes a happy celebratory spin beside a cake. Warm cinematic animation."
+    ]
+  },
+  {
+    "name": "03_atelie",
+    "voice": "Uma mensagem no celular. Um pedido no site. Uma anotação no papel. Onde ficou a conversa? O Z conecta as informações para a equipe continuar de onde parou. Zeey. Tudo pode fazer mais sentido.",
+    "prompts": [
+      "The business owner juggles a ringing phone and papers; notes slip off the desk, and she looks confused. The small blue Z watches with concern, lively 3D animation.",
+      "She searches through notes and looks between the laptop and the phone, the blue Z floats closer and gestures at the scattered papers. Expressive 3D animation.",
+      "The small blue Z stretches and becomes a blue glowing bridge, connecting the phone, website and computer screen. Papers fly gently into an orderly stack, cinematic animation.",
+      "The business owner sees the organized information on her screen, smiles and nods, blue Z reforms from the ribbon and waves. End on a bright reassuring shot."
+    ]
+  }
+]
