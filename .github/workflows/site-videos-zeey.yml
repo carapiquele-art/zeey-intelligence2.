@@ -1,0 +1,43 @@
+name: Videos Zeey - visual do site
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar ferramentas gratuitas
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install edge-tts==7.3.1
+          cd animacao/site-videos
+          npm install
+          npx remotion browser ensure
+      - name: Preparar voz e identidade
+        run: |
+          mkdir -p animacao/site-videos/public animacao/site-videos/out
+          cp animacao/fonts/switzer-500.ttf animacao/fonts/switzer-700.ttf animacao/site-videos/public/
+          cp animacao/assets/trilha.mp3 animacao/site-videos/public/
+          python animacao/site-videos/gerar_voz.py
+      - name: Renderizar tres historias
+        working-directory: animacao/site-videos
+        run: |
+          for id in Lia Beto Nina; do
+            npx remotion render src/index.tsx "Zeey$id" "out/$id.mp4" --gl=swangle --concurrency=2 --crf=18
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zeey-tres-videos-site
+          path: animacao/site-videos/out/*.mp4
+          if-no-files-found: error
+          retention-days: 7
