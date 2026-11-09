@@ -13,6 +13,7 @@ bash iniciar-termux.sh
 
 A instalação de pacotes requer rede. O primeiro uso pode consumir tempo e armazenamento; o espaço disponível e a memória atuais do telefone não foram verificados. Os vídeos são guardados na pasta videos dentro do Termux. Transferir para a galeria exige acesso Android ao armazenamento compartilhado; isso ainda não foi configurado neste aparelho.
 
-No GitHub, o arquivo .github/workflows/videos.yml deve ficar na raiz do repositório e a pasta do agente em gerador-videos/. Após integração, use Actions → Gerar vídeos Zeey → Run workflow. O resultado aparece como artefato videos-zeey, se o job e o serviço de voz concluírem com sucesso. Nada foi executado no GitHub ainda. Custos e disponibilidade de minutos do Actions dependem da conta.
+No GitHub, o arquivo .github/workflows/videos-zeey.yml deve ficar na raiz do repositório e a pasta do agente em gerador-videos/. Após integração, use Actions → Gerar vídeos Zeey → Run workflow. O resultado aparece como artefato videos-zeey, se o job e o serviço de voz concluírem com sucesso. Nada foi executado no GitHub ainda. Custos e disponibilidade de minutos do Actions dependem da conta.
 
 Os MP4 incluídos no pacote são versões de revisão com cenas estáticas, locução gerada e texto sobreposto. É necessário avaliar o resultado criativo, a pronúncia e a legibilidade antes de publicar.
+
