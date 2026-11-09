@@ -1,0 +1,37 @@
+name: Gerar vídeos Zeey
+on:
+  workflow_dispatch:
+    inputs:
+      inicio:
+        description: Primeiro roteiro (número)
+        default: '1'
+      quantidade:
+        description: Quantidade de roteiros
+        default: '20'
+permissions:
+  contents: read
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar ferramentas
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install -r gerador-videos/requirements.txt
+      - name: Gerar vídeos
+        env:
+          INICIO: ${{ inputs.inicio }}
+          QUANTIDADE: ${{ inputs.quantidade }}
+        run: python gerador-videos/agente.py --inicio "$INICIO" --limite "$QUANTIDADE"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: videos-zeey
+          path: gerador-videos/videos/*.mp4
+          if-no-files-found: error
+          retention-days: 7
