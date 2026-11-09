@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y blender ffmpeg
-          python -m pip install -r animacao/requirements.txt
+          python -m pip install -r animacao/requirements.txt pillow
       - name: Gerar tres animacoes 3D
         run: |
           for n in 0 1 2; do
@@ -28,6 +28,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: zeey-tres-historias-v2
-          path: animacao/codigo3d/v2/*.mp4
+          path: |
+            animacao/codigo3d/v2/01_oficina.mp4
+            animacao/codigo3d/v2/02_confeitaria.mp4
+            animacao/codigo3d/v2/03_servicos.mp4
           if-no-files-found: error
           retention-days: 7
