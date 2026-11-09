@@ -1,0 +1,1 @@
+{"type":"commonjs","scripts":{"render":"remotion render src/index.tsx ZeeyLia out/Lia.mp4 --browser-executable=/usr/bin/chromium --gl=swangle --concurrency=2 --crf=18"},"dependencies":{"@remotion/cli":"4.0.542","remotion":"4.0.542","react":"19.3.1","react-dom":"19.3.1"}}
