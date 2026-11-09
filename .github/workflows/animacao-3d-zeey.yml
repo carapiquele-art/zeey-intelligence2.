@@ -1,0 +1,33 @@
+name: Animacao 3D Zeey por codigo
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  renderizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar Blender, FFmpeg e voz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender ffmpeg
+          python -m pip install -r animacao/requirements.txt
+      - name: Gerar tres animacoes 3D
+        run: |
+          for n in 0 1 2; do
+            blender -b --threads 2 --python animacao/codigo3d/cena.py -- "$n"
+          done
+      - name: Montar voz, legenda e MP4
+        run: python animacao/codigo3d/finalizar.py
+      - name: Disponibilizar os videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: zeey-tres-videos-3d
+          path: animacao/saida/Zeey_0[1-3].mp4
+          if-no-files-found: error
+          retention-days: 7
